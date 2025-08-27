@@ -11,6 +11,10 @@
 		DA7A346B2E5F74FD0008D115 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7A346A2E5F74FD0008D115 /* ContentView.swift */; };
 		DA7A346D2E5F75070008D115 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA7A346C2E5F75070008D115 /* Assets.xcassets */; };
 		DA7A34702E5F75070008D115 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA7A346F2E5F75070008D115 /* Preview Assets.xcassets */; };
+		DA7A347A2E5F7AA70008D115 /* DataModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7A34792E5F7AA70008D115 /* DataModels.swift */; };
+		DA7A347D2E5F7C0F0008D115 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7A347C2E5F7C0F0008D115 /* Networking.swift */; };
+		DA7A347F2E5F7D280008D115 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7A347E2E5F7D280008D115 /* APIService.swift */; };
+		DA7A34812E5F7D840008D115 /* APIEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7A34802E5F7D840008D115 /* APIEndpoint.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +23,10 @@
 		DA7A346A2E5F74FD0008D115 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		DA7A346C2E5F75070008D115 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DA7A346F2E5F75070008D115 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		DA7A34792E5F7AA70008D115 /* DataModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModels.swift; sourceTree = "<group>"; };
+		DA7A347C2E5F7C0F0008D115 /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
+		DA7A347E2E5F7D280008D115 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		DA7A34802E5F7D840008D115 /* APIEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEndpoint.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +59,10 @@
 		DA7A34672E5F74FD0008D115 /* LinkUp */ = {
 			isa = PBXGroup;
 			children = (
+				DA7A34762E5F7A390008D115 /* Model */,
+				DA7A34772E5F7A440008D115 /* View */,
+				DA7A34782E5F7A4C0008D115 /* ViewModel */,
+				DA7A347B2E5F7B7A0008D115 /* Service */,
 				DA7A34682E5F74FD0008D115 /* LinkUpApp.swift */,
 				DA7A346A2E5F74FD0008D115 /* ContentView.swift */,
 				DA7A346C2E5F75070008D115 /* Assets.xcassets */,
@@ -65,6 +77,38 @@
 				DA7A346F2E5F75070008D115 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		DA7A34762E5F7A390008D115 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				DA7A34792E5F7AA70008D115 /* DataModels.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		DA7A34772E5F7A440008D115 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		DA7A34782E5F7A4C0008D115 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		DA7A347B2E5F7B7A0008D115 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				DA7A347C2E5F7C0F0008D115 /* Networking.swift */,
+				DA7A347E2E5F7D280008D115 /* APIService.swift */,
+				DA7A34802E5F7D840008D115 /* APIEndpoint.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,7 +181,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA7A347A2E5F7AA70008D115 /* DataModels.swift in Sources */,
+				DA7A34812E5F7D840008D115 /* APIEndpoint.swift in Sources */,
+				DA7A347F2E5F7D280008D115 /* APIService.swift in Sources */,
 				DA7A346B2E5F74FD0008D115 /* ContentView.swift in Sources */,
+				DA7A347D2E5F7C0F0008D115 /* Networking.swift in Sources */,
 				DA7A34692E5F74FD0008D115 /* LinkUpApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
