@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DA499C2A2E60EB8800968E61 /* UserProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA499C292E60EB8800968E61 /* UserProfileViewModel.swift */; };
+		DA499C2C2E60EF8300968E61 /* UserProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA499C2B2E60EF8300968E61 /* UserProfileView.swift */; };
+		DA499C2E2E60EFFA00968E61 /* PostRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA499C2D2E60EFFA00968E61 /* PostRowView.swift */; };
+		DA499C302E60F15E00968E61 /* AppNavigationPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA499C2F2E60F15E00968E61 /* AppNavigationPath.swift */; };
 		DA7A34692E5F74FD0008D115 /* LinkUpApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7A34682E5F74FD0008D115 /* LinkUpApp.swift */; };
 		DA7A346B2E5F74FD0008D115 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7A346A2E5F74FD0008D115 /* ContentView.swift */; };
 		DA7A346D2E5F75070008D115 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA7A346C2E5F75070008D115 /* Assets.xcassets */; };
@@ -25,6 +29,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DA499C292E60EB8800968E61 /* UserProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileViewModel.swift; sourceTree = "<group>"; };
+		DA499C2B2E60EF8300968E61 /* UserProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileView.swift; sourceTree = "<group>"; };
+		DA499C2D2E60EFFA00968E61 /* PostRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostRowView.swift; sourceTree = "<group>"; };
+		DA499C2F2E60F15E00968E61 /* AppNavigationPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppNavigationPath.swift; sourceTree = "<group>"; };
 		DA7A34652E5F74FD0008D115 /* LinkUp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LinkUp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA7A34682E5F74FD0008D115 /* LinkUpApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkUpApp.swift; sourceTree = "<group>"; };
 		DA7A346A2E5F74FD0008D115 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -108,6 +116,8 @@
 				DA7A34872E5F84810008D115 /* PostsView.swift */,
 				DA9B3D1B2E5F9CDE00D264CC /* PostDetailView.swift */,
 				DA9B3D1D2E5FA05A00D264CC /* CommentView.swift */,
+				DA499C2B2E60EF8300968E61 /* UserProfileView.swift */,
+				DA499C2D2E60EFFA00968E61 /* PostRowView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -117,6 +127,7 @@
 			children = (
 				DA7A34852E5F82A90008D115 /* PostsViewModel.swift */,
 				DA9B3D192E5F989D00D264CC /* PostDetailViewModel.swift */,
+				DA499C292E60EB8800968E61 /* UserProfileViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -136,6 +147,7 @@
 			isa = PBXGroup;
 			children = (
 				DA7A34832E5F80D20008D115 /* APIError.swift */,
+				DA499C2F2E60F15E00968E61 /* AppNavigationPath.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -213,12 +225,16 @@
 				DA9B3D1C2E5F9CDE00D264CC /* PostDetailView.swift in Sources */,
 				DA7A347A2E5F7AA70008D115 /* DataModels.swift in Sources */,
 				DA7A34812E5F7D840008D115 /* APIEndpoint.swift in Sources */,
+				DA499C2A2E60EB8800968E61 /* UserProfileViewModel.swift in Sources */,
 				DA7A347F2E5F7D280008D115 /* APIService.swift in Sources */,
+				DA499C302E60F15E00968E61 /* AppNavigationPath.swift in Sources */,
+				DA499C2E2E60EFFA00968E61 /* PostRowView.swift in Sources */,
 				DA7A346B2E5F74FD0008D115 /* ContentView.swift in Sources */,
 				DA7A34862E5F82A90008D115 /* PostsViewModel.swift in Sources */,
 				DA9B3D1E2E5FA05A00D264CC /* CommentView.swift in Sources */,
 				DA7A347D2E5F7C0F0008D115 /* Networking.swift in Sources */,
 				DA7A34692E5F74FD0008D115 /* LinkUpApp.swift in Sources */,
+				DA499C2C2E60EF8300968E61 /* UserProfileView.swift in Sources */,
 				DA7A34842E5F80D20008D115 /* APIError.swift in Sources */,
 				DA7A34882E5F84810008D115 /* PostsView.swift in Sources */,
 				DA9B3D1A2E5F989D00D264CC /* PostDetailViewModel.swift in Sources */,

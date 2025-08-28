@@ -12,6 +12,7 @@ enum APIEndpoint {
     case post(id: Int)
     case user(id: Int)
     case comments(postId: Int)
+    case userPosts(userId: Int)
 
     var url: URL {
         var components = URLComponents()
@@ -27,6 +28,8 @@ enum APIEndpoint {
                 return "/users/\(id)"
             case .comments(let postId):
                 return "/posts/\(postId)/comments"
+            case .userPosts(userId: let userId):
+                return "/users/\(userId)/posts"
             }
         }()
 

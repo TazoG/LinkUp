@@ -10,6 +10,7 @@ import SwiftUI
 struct PostDetailView: View {
     
     @StateObject var viewModel: PostDetailViewModel
+    let onUserTap: (_ userId: Int) -> Void
 
     var body: some View {
         ScrollView {
@@ -31,8 +32,15 @@ struct PostDetailView: View {
                     if let user = viewModel.user {
                         VStack(alignment: .leading, spacing: 10) {
                             Divider()
-                            Text("Poster by \(user.name)")
-                                .font(.headline)
+
+                            Button(action: {
+                                onUserTap(user.id)
+                            }) {
+                                Text("Posted by \(user.name)")
+                                    .font(.headline)
+                            }
+                            .buttonStyle(.plain)
+
                             Text(user.email)
                                 .font(.subheadline)
                                 .foregroundColor(.gray)
@@ -66,6 +74,8 @@ struct PostDetailView: View {
 
     let viewModel = PostDetailViewModel(post: samplePost, apiService: MockAPIService())
 
-    return PostDetailView(viewModel: viewModel)
+    return PostDetailView(viewModel: viewModel, onUserTap: { userId in 
+
+    })
 }
 

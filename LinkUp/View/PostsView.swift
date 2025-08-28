@@ -10,9 +10,10 @@ import SwiftUI
 struct PostsView: View {
 
     @StateObject private var viewModel = PostsViewModel()
+    @State private var path = NavigationPath()
 
     var body: some View {
-        NavigationView {
+        NavigationStack(path: $path) {
             VStack {
                 if viewModel.isLoading {
                     ProgressView()
@@ -21,7 +22,9 @@ struct PostsView: View {
                         .foregroundColor(.red)
                 } else {
                     List(viewModel.posts) { post in
-                        NavigationLink(destination: PostDetailView(viewModel: PostDetailViewModel(post: post))) {
+                        NavigationLink(value: AppNavigationPath.postDetail(post.id)) {
+                            PostRowView(post: post)
+
                             VStack(alignment: .leading) {
                                 Text(post.title)
                                     .font(.headline)
@@ -36,6 +39,18 @@ struct PostsView: View {
             .navigationTitle("Posts")
             .onAppear {
                 viewModel.fetchPosts()
+            }
+            .navigationDestination(for: AppNavigationPath.self) { path in
+                switch path {
+                case .postDetail(let postId):
+                    if let post = viewModel.posts.first(where: {$0.id == postId}) {
+                        PostDetailView(viewModel: PostDetailViewModel(post: post), onUserTap: { userId in
+                            self.path.append(AppNavigationPath.userProfile(userId))
+                        })
+                    }
+                case .userProfile(let userId):
+                    UserProfileView(viewModel: UserProfileViewModel(userId: userId))
+                }
             }
         }
     }
