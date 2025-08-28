@@ -14,14 +14,14 @@ class PostsViewModel: ObservableObject {
     @Published var errorMessage: String? = nil
 
     private let apiService: APIServiceProtocol
-    
+
     init(apiService: APIServiceProtocol = APIService()) {
         self.apiService = apiService
     }
-    
+
     func fetchPosts() {
         isLoading = true
-        
+
         Task {
             do {
                 let fetchedPosts: [Post] = try await apiService.fetchData(from: .posts)
@@ -32,6 +32,5 @@ class PostsViewModel: ObservableObject {
                 isLoading = false
             }
         }
-        
     }
 }

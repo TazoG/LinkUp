@@ -20,8 +20,16 @@ struct PostsView: View {
                     Text(errorMessage)
                         .foregroundColor(.red)
                 } else {
-                    List(viewModel.posts) {post in
-                        Text(post.title)
+                    List(viewModel.posts) { post in
+                        NavigationLink(destination: PostDetailView(viewModel: PostDetailViewModel(post: post))) {
+                            VStack(alignment: .leading) {
+                                Text(post.title)
+                                    .font(.headline)
+                                Text(post.body.prefix(100) + "...")
+                                    .font(.subheadline)
+                                    .foregroundColor(.secondary)
+                            }
+                        }
                     }
                 }
             }
