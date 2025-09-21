@@ -7,7 +7,16 @@
 
 import Foundation
 
-enum APIError: Error {
+enum APIError: Error, LocalizedError {
     case invalidResponse
     case decodingError
+
+    var errorDescription: String? {
+        switch self {
+        case .invalidResponse:
+            return NSLocalizedString("Invalid response from the server", comment: "")
+        case .decodingError:
+            return NSLocalizedString("Failed to decode the data", comment: "")
+        }
+    }
 }

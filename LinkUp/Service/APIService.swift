@@ -9,7 +9,7 @@ import Foundation
 
 class APIService: APIServiceProtocol {
 
-    func fetchData<T>(from endpoint: APIEndpoint) async throws -> T where T : Decodable, T : Encodable {
+    func fetchData<T: Codable>(from endpoint: APIEndpoint) async throws -> T {
         let (data, response) = try await URLSession.shared.data(from: endpoint.url)
 
         guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {

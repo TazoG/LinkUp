@@ -18,25 +18,22 @@ enum APIEndpoint {
         var components = URLComponents()
         components.scheme = "https"
         components.host = "jsonplaceholder.typicode.com"
-        components.path = {
-            switch self {
-            case .posts:
-                return "/posts"
-            case .post(let id):
-                return "/posts/\(id)"
-            case .user(let id):
-                return "/users/\(id)"
-            case .comments(let postId):
-                return "/posts/\(postId)/comments"
-            case .userPosts(userId: let userId):
-                return "/users/\(userId)/posts"
-            }
-        }()
+        components.path = path
 
         guard let url = components.url else {
-            preconditionFailure("Invalid URL for endpoints: \(self)")
+            fatalError("Invalid URL for endpoints: \(self)")
         }
 
         return url
+    }
+
+    private var path: String {
+        switch self {
+        case .posts: return "/posts"
+        case .post(let id): return "/posts/\(id)"
+        case .user(let id): return "/users/\(id)"
+        case .comments(let postId): return "/posts/\(postId)/comments"
+        case .userPosts(let userId): return "/users/\(userId)/posts"
+        }
     }
 }

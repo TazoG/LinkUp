@@ -26,6 +26,7 @@
 		DA9B3D1C2E5F9CDE00D264CC /* PostDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9B3D1B2E5F9CDE00D264CC /* PostDetailView.swift */; };
 		DA9B3D1E2E5FA05A00D264CC /* CommentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9B3D1D2E5FA05A00D264CC /* CommentView.swift */; };
 		DA9B3D202E5FA3BB00D264CC /* MockAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9B3D1F2E5FA3BB00D264CC /* MockAPIService.swift */; };
+		DACC5AE82E802F9B00BC5624 /* ThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACC5AE72E802F9B00BC5624 /* ThemeManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +50,7 @@
 		DA9B3D1B2E5F9CDE00D264CC /* PostDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailView.swift; sourceTree = "<group>"; };
 		DA9B3D1D2E5FA05A00D264CC /* CommentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentView.swift; sourceTree = "<group>"; };
 		DA9B3D1F2E5FA3BB00D264CC /* MockAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAPIService.swift; sourceTree = "<group>"; };
+		DACC5AE72E802F9B00BC5624 /* ThemeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +150,7 @@
 			children = (
 				DA7A34832E5F80D20008D115 /* APIError.swift */,
 				DA499C2F2E60F15E00968E61 /* AppNavigationPath.swift */,
+				DACC5AE72E802F9B00BC5624 /* ThemeManager.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -227,6 +230,7 @@
 				DA7A34812E5F7D840008D115 /* APIEndpoint.swift in Sources */,
 				DA499C2A2E60EB8800968E61 /* UserProfileViewModel.swift in Sources */,
 				DA7A347F2E5F7D280008D115 /* APIService.swift in Sources */,
+				DACC5AE82E802F9B00BC5624 /* ThemeManager.swift in Sources */,
 				DA499C302E60F15E00968E61 /* AppNavigationPath.swift in Sources */,
 				DA499C2E2E60EFFA00968E61 /* PostRowView.swift in Sources */,
 				DA7A346B2E5F74FD0008D115 /* ContentView.swift in Sources */,
