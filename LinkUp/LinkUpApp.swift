@@ -9,9 +9,14 @@ import SwiftUI
 
 @main
 struct LinkUpApp: App {
+
+    @StateObject private var themeManager = ThemeManager()
+
     var body: some Scene {
         WindowGroup {
-            PostsView()
+            MainTabView()
+                .environmentObject(themeManager)
+                .preferredColorScheme(themeManager.currentTheme.colorScheme)
         }
     }
 }

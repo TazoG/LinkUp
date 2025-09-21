@@ -27,6 +27,8 @@
 		DA9B3D1E2E5FA05A00D264CC /* CommentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9B3D1D2E5FA05A00D264CC /* CommentView.swift */; };
 		DA9B3D202E5FA3BB00D264CC /* MockAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9B3D1F2E5FA3BB00D264CC /* MockAPIService.swift */; };
 		DACC5AE82E802F9B00BC5624 /* ThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACC5AE72E802F9B00BC5624 /* ThemeManager.swift */; };
+		DACC5AEA2E8032A700BC5624 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACC5AE92E8032A700BC5624 /* SettingsView.swift */; };
+		DACC5AEC2E8035C900BC5624 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACC5AEB2E8035C900BC5624 /* MainTabView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +53,8 @@
 		DA9B3D1D2E5FA05A00D264CC /* CommentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentView.swift; sourceTree = "<group>"; };
 		DA9B3D1F2E5FA3BB00D264CC /* MockAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAPIService.swift; sourceTree = "<group>"; };
 		DACC5AE72E802F9B00BC5624 /* ThemeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeManager.swift; sourceTree = "<group>"; };
+		DACC5AE92E8032A700BC5624 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		DACC5AEB2E8035C900BC5624 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +124,8 @@
 				DA9B3D1D2E5FA05A00D264CC /* CommentView.swift */,
 				DA499C2B2E60EF8300968E61 /* UserProfileView.swift */,
 				DA499C2D2E60EFFA00968E61 /* PostRowView.swift */,
+				DACC5AE92E8032A700BC5624 /* SettingsView.swift */,
+				DACC5AEB2E8035C900BC5624 /* MainTabView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -243,6 +249,8 @@
 				DA7A34882E5F84810008D115 /* PostsView.swift in Sources */,
 				DA9B3D1A2E5F989D00D264CC /* PostDetailViewModel.swift in Sources */,
 				DA9B3D202E5FA3BB00D264CC /* MockAPIService.swift in Sources */,
+				DACC5AEA2E8032A700BC5624 /* SettingsView.swift in Sources */,
+				DACC5AEC2E8035C900BC5624 /* MainTabView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
