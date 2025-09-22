@@ -29,6 +29,8 @@
 		DACC5AE82E802F9B00BC5624 /* ThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACC5AE72E802F9B00BC5624 /* ThemeManager.swift */; };
 		DACC5AEA2E8032A700BC5624 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACC5AE92E8032A700BC5624 /* SettingsView.swift */; };
 		DACC5AEC2E8035C900BC5624 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACC5AEB2E8035C900BC5624 /* MainTabView.swift */; };
+		DACC5AF42E81848C00BC5624 /* FavoritePost.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACC5AF32E81848C00BC5624 /* FavoritePost.swift */; };
+		DACC5AF62E818D0000BC5624 /* PostService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACC5AF52E818D0000BC5624 /* PostService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +57,8 @@
 		DACC5AE72E802F9B00BC5624 /* ThemeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeManager.swift; sourceTree = "<group>"; };
 		DACC5AE92E8032A700BC5624 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		DACC5AEB2E8035C900BC5624 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
+		DACC5AF32E81848C00BC5624 /* FavoritePost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritePost.swift; sourceTree = "<group>"; };
+		DACC5AF52E818D0000BC5624 /* PostService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				DA7A34792E5F7AA70008D115 /* DataModels.swift */,
+				DACC5AF32E81848C00BC5624 /* FavoritePost.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -147,6 +152,7 @@
 				DA7A347E2E5F7D280008D115 /* APIService.swift */,
 				DA7A34802E5F7D840008D115 /* APIEndpoint.swift */,
 				DA9B3D1F2E5FA3BB00D264CC /* MockAPIService.swift */,
+				DACC5AF52E818D0000BC5624 /* PostService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -236,9 +242,11 @@
 				DA7A34812E5F7D840008D115 /* APIEndpoint.swift in Sources */,
 				DA499C2A2E60EB8800968E61 /* UserProfileViewModel.swift in Sources */,
 				DA7A347F2E5F7D280008D115 /* APIService.swift in Sources */,
+				DACC5AF62E818D0000BC5624 /* PostService.swift in Sources */,
 				DACC5AE82E802F9B00BC5624 /* ThemeManager.swift in Sources */,
 				DA499C302E60F15E00968E61 /* AppNavigationPath.swift in Sources */,
 				DA499C2E2E60EFFA00968E61 /* PostRowView.swift in Sources */,
+				DACC5AF42E81848C00BC5624 /* FavoritePost.swift in Sources */,
 				DA7A346B2E5F74FD0008D115 /* ContentView.swift in Sources */,
 				DA7A34862E5F82A90008D115 /* PostsViewModel.swift in Sources */,
 				DA9B3D1E2E5FA05A00D264CC /* CommentView.swift in Sources */,

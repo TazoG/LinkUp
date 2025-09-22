@@ -70,7 +70,7 @@ struct PostDetailView: View {
 
 #Preview {
 
-    let samplePost = Post(userId: 1, id: 1, title: "sample post title", body: "sample post body for #preview")
+    let samplePost = FavoritePost(userId: 1, id: 1, title: "sample post title", body: "sample post body for #preview")
 
     let viewModel = PostDetailViewModel(post: samplePost, apiService: MockAPIService())
 

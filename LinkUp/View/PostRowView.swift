@@ -6,11 +6,13 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct PostRowView: View {
-    let post: Post
+    @Bindable var post: FavoritePost
 
     var body: some View {
+
         VStack(alignment: .leading, spacing: 5) {
             Text(post.title)
                 .font(.headline)
@@ -18,6 +20,18 @@ struct PostRowView: View {
                 .font(.body)
                 .lineLimit(2)
                 .foregroundColor(.secondary)
+
+            Spacer()
+
+            Button {
+                withAnimation {
+                    post.isLiked.toggle()
+                }
+            } label: {
+                Image(systemName: post.isLiked ? "heart.fill" : "heart")
+                    .foregroundColor(post.isLiked ? .red : .gray)
+            }
+            .buttonStyle(PlainButtonStyle())
         }
         .padding()
         .background(Color(.systemGray6))
@@ -26,5 +40,5 @@ struct PostRowView: View {
 }
 
 #Preview {
-    PostRowView(post: Post(userId: 1, id: 1, title: "PostRowViewTitle", body: "PostRowViewBody"))
+    PostRowView(post: FavoritePost(userId: 1, id: 1, title: "PostRowViewTitle", body: "PostRowViewBody"))
 }

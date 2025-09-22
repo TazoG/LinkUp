@@ -40,7 +40,14 @@ struct UserProfileView: View {
                         .fontWeight(.bold)
 
                     ForEach(viewModel.userPosts) { post in
-                        PostRowView(post: post)
+
+                        let temporaryPost = FavoritePost(
+                            userId: post.userId,
+                            id: post.id,
+                            title: post.title,
+                            body: post.body
+                        )
+                        PostRowView(post: temporaryPost)
                     }
                 }
             }
