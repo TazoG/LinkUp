@@ -8,8 +8,8 @@
 import Foundation
 
 @MainActor
-class PostDetailViewModel: ObservableObject {
-    
+final class PostDetailViewModel: ObservableObject {
+
     @Published var post: FavoritePost
     @Published var user: User? = nil
     @Published var comments: [Comment] = []
@@ -33,16 +33,12 @@ class PostDetailViewModel: ObservableObject {
                     apiService.fetchData(from: .user(id: post.userId)),
                     apiService.fetchData(from: .comments(postId: post.id))
                 )
-                await MainActor.run {
                     user = fetchedUser
                     comments = fetchedComments
                     isLoading = false
-                }
             } catch {
-                await MainActor.run {
                     errorMessage = "Failed to load details: \(error.localizedDescription)"
                     isLoading = false
-                }
             }
         }
     }

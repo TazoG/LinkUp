@@ -9,7 +9,7 @@ import Foundation
 import SwiftData
 
 @MainActor
-class PostsViewModel: ObservableObject {
+final class PostsViewModel: ObservableObject {
     @Published var displayPosts: [FavoritePost] = []
     @Published var posts: [Post] = []
     @Published var favoritePosts: [FavoritePost] = []
@@ -42,16 +42,14 @@ class PostsViewModel: ObservableObject {
 
                 postService.saveOrUpdatePosts(fetchedPosts)
 
-                await MainActor.run {
                     displayPosts = postService.fetchAllPosts()
                     //                posts = fetchedPosts
                     isLoading = false
-                }
+
             } catch {
-                await MainActor.run {
                     errorMessage = "Failed to load posts: \(error.localizedDescription)"
                     isLoading = false
-                }
+
             }
         }
     }

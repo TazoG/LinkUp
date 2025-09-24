@@ -7,9 +7,8 @@
 
 import Foundation
 
-import Foundation
-
-class UserProfileViewModel: ObservableObject {
+@MainActor
+final class UserProfileViewModel: ObservableObject {
     @Published var user: User?
     @Published var userPosts: [Post] = []
     @Published var isLoading = false

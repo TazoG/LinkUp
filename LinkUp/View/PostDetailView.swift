@@ -8,62 +8,101 @@
 import SwiftUI
 
 struct PostDetailView: View {
-    
     @StateObject var viewModel: PostDetailViewModel
     let onUserTap: (_ userId: Int) -> Void
 
     var body: some View {
-        ScrollView {
-            VStack(alignment: .leading, spacing: 20) {
-                if viewModel.isLoading {
-                    ProgressView()
-                        .frame(maxWidth: .infinity, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                } else if let errorMessage = viewModel.errorMessage {
-                    Text(errorMessage)
-                        .foregroundColor(.red)
-                } else {
-                    Text(viewModel.post.title)
-                        .font(.title)
-                        .fontWeight(.bold)
+        ZStack {
+            Color(.systemGray6)
+                .ignoresSafeArea()
 
-                    Text(viewModel.post.body)
-                        .font(.body)
-
+            ScrollView {
+                VStack(alignment: .leading, spacing: 20) {
                     if let user = viewModel.user {
-                        VStack(alignment: .leading, spacing: 10) {
-                            Divider()
+                        Button(action: {
+                            onUserTap(user.id)
+                        }) {
+                            HStack(spacing: 15) {
+                                Image(systemName: "person.circle.fill")
+                                    .resizable()
+                                    .frame(width: 50, height: 50)
+                                    .foregroundColor(.blue)
 
-                            Button(action: {
-                                onUserTap(user.id)
-                            }) {
-                                Text("Posted by \(user.name)")
-                                    .font(.headline)
+                                VStack(alignment: .leading) {
+                                    Text(user.name)
+                                        .font(.title3)
+                                        .fontWeight(.semibold)
+                                        .foregroundColor(.primary)
+
+                                    Text(user.email)
+                                        .font(.subheadline)
+                                        .foregroundColor(.secondary)
+                                }
                             }
-                            .buttonStyle(.plain)
-
-                            Text(user.email)
-                                .font(.subheadline)
-                                .foregroundColor(.gray)
-                            Divider()
+                            .padding()
+                            .background(Color(.systemBackground))
+                            .cornerRadius(12)
+                            .shadow(color: Color.black.opacity(0.05), radius: 5, x: 0, y: 3)
                         }
+                        .buttonStyle(.plain)
+                    } else {
+                        HStack(spacing: 15) {
+                            Image(systemName: "person.circle.fill")
+                                .resizable()
+                                .frame(width: 50, height: 50)
+                                .foregroundColor(.blue)
+
+                            VStack(alignment: .leading) {
+                                Text("Loading user...")
+                                    .font(.title3)
+                                    .fontWeight(.semibold)
+                                    .redacted(reason: .placeholder)
+                                Text("loading@email.com")
+                                    .font(.subheadline)
+                                    .foregroundColor(.secondary)
+                                    .redacted(reason: .placeholder)
+                            }
+                        }
+                        .padding()
+                        .background(Color(.systemBackground))
+                        .cornerRadius(12)
+                        .shadow(color: Color.black.opacity(0.05), radius: 5, x: 0, y: 3)
                     }
 
-                    if !viewModel.comments.isEmpty {
-                        Text("Comments")
-                            .font(.title2)
+                    VStack(alignment: .leading, spacing: 10) {
+                        Text(viewModel.post.title)
+                            .font(.title)
                             .fontWeight(.bold)
 
-                        ForEach(viewModel.comments) { comment in
-                            CommentView(comment: comment)
+                        Text(viewModel.post.body)
+                            .font(.body)
+                            .foregroundColor(.secondary)
+                    }
+                    .padding()
+                    .background(Color(.systemBackground))
+                    .cornerRadius(12)
+                    .shadow(color: Color.black.opacity(0.05), radius: 5, x: 0, y: 3)
+
+                    if !viewModel.comments.isEmpty {
+                        VStack(alignment: .leading, spacing: 15) {
+                            Text("Comments")
+                                .font(.title2)
+                                .fontWeight(.bold)
+                                .foregroundColor(.primary)
+
+                            ForEach(viewModel.comments) { comment in
+                                CommentView(comment: comment)
+                            }
                         }
                     }
                 }
+                .padding()
+                .navigationTitle("Post")
+                .navigationBarTitleDisplayMode(.inline)
             }
-            .padding()
-            .navigationTitle("Post Details")
-            .onAppear {
-                viewModel.fetchData()
-            }
+        }
+        .onAppear {
+            viewModel.fetchData()
         }
     }
 }
