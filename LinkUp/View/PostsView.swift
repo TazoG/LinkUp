@@ -33,6 +33,9 @@ struct PostsView: View {
                 }
             }
             .navigationTitle("Posts")
+            .refreshable {
+                viewModel.fetchPosts()
+            }
             .onAppear {
 //                viewModel.fetchPosts()
                 viewModel.configure(with: modelContext)
