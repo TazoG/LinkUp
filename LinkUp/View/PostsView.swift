@@ -16,19 +16,27 @@ struct PostsView: View {
 
     var body: some View {
         NavigationStack(path: $path) {
-            VStack {
-                if viewModel.isLoading {
-                    ProgressView()
-                } else if let errorMessage = viewModel.errorMessage {
-                    Text(errorMessage)
-                        .foregroundColor(.red)
-                } else {
-                    List {
-                        ForEach(viewModel.displayPosts) { post in
-                            NavigationLink(value: AppNavigationPath.postDetail(post.id)) {
-                                PostRowView(post: post)
+            ZStack {
+                Color(.systemGray6)
+                    .ignoresSafeArea()
+
+                VStack {
+                    if viewModel.isLoading {
+                        ProgressView()
+                    } else if let errorMessage = viewModel.errorMessage {
+                        Text(errorMessage)
+                            .foregroundColor(.red)
+                    } else {
+                        ScrollView {
+                            LazyVStack(spacing: 15) {
+                                ForEach(viewModel.displayPosts) { post in
+                                    NavigationLink(value: AppNavigationPath.postDetail(post.id)) {
+                                        PostRowView(post: post)
+                                    }
+                                }
                             }
                         }
+                        .padding()
                     }
                 }
             }
@@ -37,7 +45,6 @@ struct PostsView: View {
                 viewModel.fetchPosts()
             }
             .onAppear {
-//                viewModel.fetchPosts()
                 viewModel.configure(with: modelContext)
 
             }
