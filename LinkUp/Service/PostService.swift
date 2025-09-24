@@ -40,6 +40,18 @@ class PostService {
         }
     }
 
+    func fetchUserPostsFromDB(userId: Int) -> [FavoritePost] {
+        let predicate = #Predicate<FavoritePost> { $0.userId == userId }
+        let fetchDescriptor = FetchDescriptor<FavoritePost>(predicate: predicate)
+
+        do {
+            return try modelContext.fetch(fetchDescriptor)
+        } catch {
+            print("Failed to fetch user posts from DB: \(error)")
+            return []
+        }
+    }
+
     // პოსტის ძებნა IDით
     private func fetchPost(with id: Int) -> FavoritePost? {
         let predicate = #Predicate<FavoritePost> { $0.id == id }

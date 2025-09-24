@@ -6,8 +6,10 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct UserProfileView: View {
+    @Environment(\.modelContext) private var modelContext
     @StateObject var viewModel: UserProfileViewModel
 
     var body: some View {
@@ -21,40 +23,51 @@ struct UserProfileView: View {
                         .foregroundColor(.red)
                 } else if let user = viewModel.user {
                     VStack(alignment: .leading, spacing: 8) {
-                        Text(user.name)
-                            .font(.largeTitle)
-                            .fontWeight(.bold)
-                        Text(user.username)
-                            .font(.title2)
-                            .foregroundColor(.secondary)
+                        HStack(spacing: 15) {
+                            Image(systemName: "person.circle.fill")
+                                .resizable()
+                                .frame(width: 60, height: 60)
+                                .foregroundColor(.blue)
+
+                            VStack(alignment: .leading, spacing: 5) {
+                                Text(user.name)
+                                    .font(.largeTitle)
+                                    .fontWeight(.bold)
+                                    .foregroundColor(.primary)
+                                Text(user.username)
+                                    .font(.title2)
+                                    .foregroundColor(.secondary)
+                            }
+                        }
                         Text(user.email)
                             .font(.headline)
                             .foregroundColor(.gray)
                     }
-                    .padding(.bottom)
+                    .padding()
+                    .background(Color(.systemBackground))
+                    .cornerRadius(12)
+                    .shadow(color: Color.black.opacity(0.1), radius: 5, x: 0, y: 5)
 
                     Divider()
 
                     Text("Posts by \(user.name)")
                         .font(.title2)
                         .fontWeight(.bold)
+                        .padding(.leading)
 
-                    ForEach(viewModel.userPosts) { post in
-
-                        let temporaryPost = FavoritePost(
-                            userId: post.userId,
-                            id: post.id,
-                            title: post.title,
-                            body: post.body
-                        )
-                        PostRowView(post: temporaryPost)
+                    LazyVStack(spacing: 15) {
+                        ForEach(viewModel.userPosts) { post in
+                            PostRowView(post: post)
+                        }
                     }
+                    .padding(.horizontal)
                 }
             }
             .padding()
             .navigationTitle("Profile")
+            .navigationBarTitleDisplayMode(.inline)
             .onAppear {
-                viewModel.fetchUserProfileData()
+                viewModel.configure(with: modelContext)
             }
         }
     }
