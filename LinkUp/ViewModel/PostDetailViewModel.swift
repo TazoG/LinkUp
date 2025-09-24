@@ -7,17 +7,18 @@
 
 import Foundation
 
-class PostDetailViewModel: ObservableObject {
+@MainActor
+final class PostDetailViewModel: ObservableObject {
 
+    @Published var post: FavoritePost
     @Published var user: User? = nil
     @Published var comments: [Comment] = []
     @Published var isLoading: Bool = false
     @Published var errorMessage: String? = nil
 
-    let post: Post
     private let apiService: APIServiceProtocol
 
-    init(post: Post, apiService: APIServiceProtocol = APIService()) {
+    init(post: FavoritePost, apiService: APIServiceProtocol = APIService()) {
         self.post = post
         self.apiService = apiService
     }
@@ -32,13 +33,12 @@ class PostDetailViewModel: ObservableObject {
                     apiService.fetchData(from: .user(id: post.userId)),
                     apiService.fetchData(from: .comments(postId: post.id))
                 )
-
-                user = fetchedUser
-                comments = fetchedComments
-                isLoading = false
+                    user = fetchedUser
+                    comments = fetchedComments
+                    isLoading = false
             } catch {
-                errorMessage = "Failed to load details: \(error.localizedDescription)"
-                isLoading = false
+                    errorMessage = "Failed to load details: \(error.localizedDescription)"
+                    isLoading = false
             }
         }
     }

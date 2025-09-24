@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "866BE11C-E8C5-4A8B-8528-E24C6A7CAC1B"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "059EE327-DA6D-4980-A5FF-E63D6BFDDC10"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LinkUp/View/PostsView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "12"
+            endingLineNumber = "12"
+            landmarkName = "PostsView"
+            landmarkType = "14">
+            <Locations>
+               <Location
+                  uuid = "059EE327-DA6D-4980-A5FF-E63D6BFDDC10 - 854705b00c4999b0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "LinkUp.PostsView.init() -&gt; LinkUp.PostsView"
+                  moduleName = "LinkUp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tazogigitashvili/Downloads/Tazo/LinkUp/LinkUp/View/PostsView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "157">
+               </Location>
+               <Location
+                  uuid = "059EE327-DA6D-4980-A5FF-E63D6BFDDC10 - b1b6524fc9e28427"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "LinkUp.PostsView.init(viewModel: @autoclosure () -&gt; LinkUp.PostsViewModel) -&gt; LinkUp.PostsView"
+                  moduleName = "LinkUp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tazogigitashvili/Downloads/Tazo/LinkUp/LinkUp/View/PostsView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "103">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "1CE3BF92-BC26-4127-938D-EADFA9E24F3C"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LinkUp/Service/APIService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "21"
+            endingLineNumber = "21"
+            landmarkName = "fetchData(from:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
