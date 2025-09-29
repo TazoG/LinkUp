@@ -12,14 +12,20 @@ struct CommentView: View {
     let comment: Comment
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 20) {
+        VStack(alignment: .leading, spacing: 5) {
             Text(comment.name)
                 .font(.headline)
+                .fontWeight(.bold)
+                .foregroundColor(.primary)
+
+            Text("By: \(comment.email)")
+                .font(.subheadline)
+                .foregroundColor(.secondary)
+
             Text(comment.body)
                 .font(.body)
-            Text("By: \(comment.email)")
-                .font(.caption)
-                .foregroundColor(.secondary)
+                .foregroundColor(.primary)
+                .padding(.top, 5)
         }
         .padding()
         .background(Color(.systemGray6))
